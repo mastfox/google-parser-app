@@ -26,6 +26,8 @@ SECRET_KEY = 'd!jy&(r$!fbq2k&k=0&_&+esea9i*slq&fjy42h(v^y@lu57hu'
 DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+SCHEMA = 'http'
+HOST_NAME = f'{SCHEMA}://127.0.0.1:8000/'
 
 
 # Application definition
@@ -37,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'homepage.apps.HomepageConfig',
 ]
 
 MIDDLEWARE = [
@@ -122,3 +125,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+    '/var/www/static/',
+]
+
+MEDIA_ROOT = 'data/img'
+MEDIA_URL = '/media/'
