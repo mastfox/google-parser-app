@@ -1,4 +1,14 @@
 {% load static %}
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>GParser</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Alegreya|Merriweather+Sans|Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'assets/css/style.min.css' %}">
+</head>
+<body>
 
 <header class="header js-header-scroll">
         <nav hidden>
@@ -19,11 +29,11 @@
             </div>
             <!-- End Header menu for mobile -->
             <ul class="menu">
-                <li class="active"><a href="index.html">Home</a></li>
-                <li><a href="about.html">About GParser</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li class="active"><a href="/">Home</a></li>
+                <li><a href="/about">About GParser</a></li>
+                <li><a href="/contact">Contact</a></li>
                 {% if user.is_authenticated %}
-                <li>Hello, {{ user }}!</li>li>
+                <li><span>Hello, <b>{{ user }}</b>!</span></li>
                 <li><a href="/logout">Logout</a></li>
                 {% else %}
                 <li><a href="/register">Register</a></li>

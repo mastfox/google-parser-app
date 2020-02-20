@@ -1,0 +1,28 @@
+{% extends 'main.html' %}
+
+{% block content %}
+    <div class="card">
+        Success!
+    </div>
+{% endblock %}
+
+<!-- Start Header -->
+{% include 'header.html' with user=user %}
+<!-- End Header -->
+<!-- Start Section -->
+{% block content %}
+<section class="section pb-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 mb-40">
+                <h1>Success registration</h1>
+                <p>Congratulate with registration in our system!</p>
+                <a href="#" class="btn btn-primary btn-stroke btn-rounded">Learn more </a>
+            </div>
+                /div>
+        </div>
+</section>
+<!-- End Section -->
+{% endblock %}
+
+{% include 'footer.html' with user=user %}

@@ -1,16 +1,5 @@
 <!DOCTYPE html>
 {% load static %}
-
-<html lang="en" dir="ltr">
-<head>
-    <meta charset="utf-8">
-    <title>GParser</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <link href="https://fonts.googleapis.com/css?family=Alegreya|Merriweather+Sans|Pacifico&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'assets/css/style.min.css' %}">
-</head>
-<body>
     <!-- Start Header -->
     {% include 'header.html' with user=user %}
     <!-- End Header -->
@@ -25,6 +14,7 @@
                             <h1 class="masthead__content-title">GParser - Google parser system</h1>
                             <p class="masthead__content-subtitle">Top marketing template in the bigest market place</p>
                         </div>
+
                         <div class="masthead__form">
                             <form name="register" action="">
                                 <div class="form-group">
@@ -45,6 +35,7 @@
                             </form>
                         </div>
                     </div>
+
                     <div class="col-lg-8">
                         <img src="{% static 'assets/images/business-looking.png' %}" class="img-fluid" alt="Business Looking" />
                     </div>
@@ -264,6 +255,3 @@
     </div>
 
     {% include 'footer.html' with user=user %}
-
-</body>
-</html>

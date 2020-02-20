@@ -40,13 +40,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'homepage.apps.HomepageConfig',
+    'users.apps.UsersConfig',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    # 'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -79,9 +80,9 @@ WSGI_APPLICATION = 'gparser.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'django_db',
-        'USER': 'alex',
-        'PASSWORD': 'password',
+        'NAME': 'gparser_db',
+        'USER': 'masterv',
+        'PASSWORD': 'va261985',
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }
@@ -105,6 +106,10 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+AUTH_USER_MODEL = 'users.User'
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 
 # Internationalization
@@ -133,3 +138,5 @@ STATICFILES_DIRS = [
 
 MEDIA_ROOT = 'data/img'
 MEDIA_URL = '/media/'
+
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True

@@ -17,15 +17,15 @@ def register(request):
         form = RegistrationForm(request.POST)
         if form.is_valid():
             user = form.save()
-            login(request, user)
-            link = user.get_verification_link()
-            user.email_user(
-                "Email confirmation",
-                f"Please follow the <a href='{link}'>link</a>",
-                from_email='admin@bio.com'
-            )
-            user.verification_email_sent_at = timezone.now()
-            user.save()
+            # login(request, user)
+            # link = user.get_verification_link
+            # user.email_user(
+            #     "Email confirmation",
+            #     f"Please follow the <a href='{link}'>link</a>",
+            #     from_email='menedgeralex@gmail.com'
+            # )
+            # user.verification_email_sent_at = timezone.now()
+            # user.save()
             return redirect("/")
         else:
             return render(request, 'register.html', context={
