@@ -2655,6 +2655,24 @@ input[type=submit].btn-block {
 	transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out
 }
 
+.btn.btn-button {
+    padding: 3px 10px 3px 10px;
+    border-radius: 3px;
+}
+
+.btn-button {
+    background: #f26822;
+    border-color: #f26822;
+    color: #fff;
+}
+
+.btn-button:active, .btn-button:focus, .btn-button:hover {
+    background: #c74e11;
+    border-color: #c74e11;
+    color: #fff;
+    text-decoration: none;
+}
+
 .dropdown-toggle::after,
 .dropup .dropdown-toggle::after {
 	vertical-align: .255em;
@@ -17870,11 +17888,17 @@ screen and (max-height:300px) {
 }
 
 .header:hover .attributes li,
-.header:hover .menu li a {
+.header:hover .menu li a,
+.header:hover .menu li span {
 	padding: 25px 0!important
 }
 
-.header:hover .nav-header .brand {
+.header .menu li span {
+    transition: all .3s ease-in-out !important;
+}
+
+.header:hover .nav-header .brand,
+.header:hover .nav-header .brand span{
 	margin-top: 20px!important
 }
 
@@ -17906,7 +17930,8 @@ screen and (max-height:300px) {
 }
 
 .header__inner .attributes li,
-.header__inner .menu li a {
+.header__inner .menu li a,
+.header__sticky .menu li span {
 	padding: 25px 0!important
 }
 
@@ -17937,7 +17962,8 @@ screen and (max-height:300px) {
 }
 
 .header__sticky .attributes li,
-.header__sticky .menu li a {
+.header__sticky .menu li a,
+.header__sticky .menu li span {
 	padding: 25px 0!important
 }
 
@@ -18827,7 +18853,7 @@ screen and (max-height:300px) {
 
 .section {
 	position: relative;
-	padding: 80px 0
+	padding: 20px 0
 }
 
 .section__divider {
@@ -19762,6 +19788,10 @@ screen and (max-height:300px) {
     width: 100%;
 }
 
+.form-group select {
+    padding:2px;
+}
+
 .form__subscribe-button-blue {
 	background: #1e5ee5;
 	border-color: #1e5ee5;
@@ -19799,7 +19829,7 @@ screen and (max-height:300px) {
 }
 
 .form-group {
-	display: block;
+	display: inline-block;
 	margin-bottom: 20px
 }
 
@@ -20109,6 +20139,20 @@ button:hover {
 .btn-stroke.btn-primary,
 .header .attributes li a.btn-stroke.btn-header {
 	border-color: #1e5ee5;
+	color: #1e5ee5
+}
+
+.btn-stroke.btn-primary-blue {
+	background: #1e5ee5;
+	color: #fff;
+	text-decoration: none
+}
+
+.btn-stroke.btn-primary-blue:active,
+.btn-stroke.btn-primary-blue:focus,
+.btn-stroke.btn-primary-blue:hover {
+    background: #fff;
+    border-color: #1e5ee5;
 	color: #1e5ee5
 }
 
@@ -23222,5 +23266,50 @@ button:hover {
     line-height: normal;
     font-family: "Montserrat Bold",sans-serif;
     padding: 40px 0;
+    text-decoration: none;
+}
+
+.board-table {
+    width:100%;
+    border-collapse: collapse;
+    border: 1px solid #edf3ff;
+}
+
+.board-table tr th {
+    text-align: center;
+    padding: 2px;
+    border-right: 1px solid #edf3ff;
+    border-bottom: 1px solid #edf3ff;
+    background-color: #edf3ff;
+}
+.board-table tr td {
+    border-right: 1px solid #edf3ff;
+    border-bottom: 1px solid #edf3ff;
+    padding: 2px;
+}
+
+.board-table tr td.board-table-first,
+.board-table tr th.board-table-first {
+    width: 5%;
+    text-align: center;
+    font-weight: 600;
+}
+
+.board-table-end {
+    width: 7%;
+    text-align: center;
+}
+
+.board-del, .board-csv {
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.board-csv {margin-left: 20px;}
+
+.nav-header .brand {
+    font-weight: 600;
+    color: #fff;
+    font-size: 28px;
     text-decoration: none;
 }

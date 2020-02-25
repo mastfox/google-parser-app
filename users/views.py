@@ -26,7 +26,7 @@ def register(request):
             # )
             # user.verification_email_sent_at = timezone.now()
             # user.save()
-            return redirect("login.html")
+            return redirect("/login/")
         else:
             return render(request, 'register.html', context={
                 "form": form
@@ -44,7 +44,7 @@ def login_view(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return redirect('dashboard.html')
+            return redirect('/jboard/')
         else:
             return render(request, 'login.html', context={
                 "error": True

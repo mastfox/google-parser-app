@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+{% load static %}
+    <!-- Start Header -->
+    {% include 'ds-header.html' with user=user %}
+    <!-- End Header -->
+    <div id="app">
+        {% block content %}
+        <!-- Start Section -->
+        {% if user.is_authenticated %}
+        <section class="section section__gray pb-0">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="board">
+                            <form method="post" action="/create/">
+                                <div class="form-group">
+                                    {% csrf_token %}
+                                    <div>
+                                        <input name="keyword" type="text" placeholder="Enter keyword">
+                                    </div>
+                                </div>
+                                <div  class="form-group">
+                                    <label>Number of lines:</label>
+                                    <select name="count-field" onChange="myNewFunction(this)">
+                                        <option value="5">5</option>
+                                        <option value="10">10</option>
+                                        <option value="15">15</option>
+                                        <option value="20">20</option>
+                                        <option value="50">50</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <input class="btn btn-button" type="submit" value="Start">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section pb-0">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        {% if parser_data.count > 0 %}
+                        <h3>Crawling result</h3>
+                        <table class="board-table">
+                            <tr>
+                                <th class="board-table-first">Position</th>
+                                <th style="width: 20%;">URL</th>
+                                <th>Title</th>
+                                <th>Description</th>
+                                <th>Last update</th>
+                            </tr>
+                            {% for Parsers in parser_data %}
+                            <tr>
+                                <td class="board-table-first">{{ Parsers.position }}</td>
+                                <td style="width: 20%;">
+                                    <a href="{{ Parsers.link }}" target="_blank">{{ Parsers.link }}</a>
+                                </td>
+                                <td>{{ Parsers.title }}</td>
+                                <td>{{ Parsers.description }}</td>
+                                <td class="board-table-end">{{ Parsers.update|date:"d/m/Y" }}</td>
+                            </tr>
+                            {% endfor %}
+                        </table>
+                        <div class="board-del">
+                            <a href="/delete/" class="btn btn-primary btn-stroke btn-rounded">Delete all data</a>
+                        </div>
+                        <div class="board-csv">
+                            <a href="{% url 'export_data_csv' %}" class="btn btn-primary-blue btn-stroke btn-rounded">Export to CSV</a>
+                        </div>
+                        {% else %}
+                        <p>You don't have a data! Please enter a keyword and click the button above.</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Section -->
+        {% else %}
+        <section class="section pb-0">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-5 mb-40">
+                        <h1>Authorization information</h1>
+                        <p>Excuse us, but you are not authorized in the system. Please follow the links: <a href="/login/">authorization</a> or <a href="/register/">registration</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        {% endif %}
+        <!-- End Section -->
+        {% endblock %}
+    </div>
+
+    {% include 'ds-footer.html' with user=user %}

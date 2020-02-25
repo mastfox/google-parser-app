@@ -17870,8 +17870,13 @@ screen and (max-height:300px) {
 }
 
 .header:hover .attributes li,
-.header:hover .menu li a {
+.header:hover .menu li a,
+.header:hover .menu li span {
 	padding: 25px 0!important
+}
+
+.header .menu li span {
+    transition: all .3s ease-in-out !important;
 }
 
 .header:hover .nav-header .brand {
@@ -17906,7 +17911,8 @@ screen and (max-height:300px) {
 }
 
 .header__inner .attributes li,
-.header__inner .menu li a {
+.header__inner .menu li a,
+.header__sticky .menu li span {
 	padding: 25px 0!important
 }
 
@@ -17922,7 +17928,8 @@ screen and (max-height:300px) {
 
 @media (max-width:991px) {
 	.header__inner .attributes li,
-	.header__inner .menu li a {
+	.header__inner .menu li a,
+	.header__sticky .menu li span {
 		padding: 0!important
 	}
 	.header__inner .nav-header .brand {
@@ -17937,7 +17944,8 @@ screen and (max-height:300px) {
 }
 
 .header__sticky .attributes li,
-.header__sticky .menu li a {
+.header__sticky .menu li a,
+.header__sticky .menu li span {
 	padding: 25px 0!important
 }
 
@@ -17947,7 +17955,8 @@ screen and (max-height:300px) {
 
 @media (max-width:991px) {
 	.header__sticky .attributes li,
-	.header__sticky .menu li a {
+	.header__sticky .menu li a,
+	.header__sticky .menu li span {
 		padding: 0!important
 	}
 	.header__sticky .nav-header .brand {
@@ -17973,7 +17982,8 @@ screen and (max-height:300px) {
 }
 
 .header .menu li a:hover,
-.header .menu li.active a {
+.header .menu li.active a,
+.header__sticky .menu li span {
 	color: #1e5ee5
 }
 
@@ -23230,4 +23240,15 @@ button:hover {
     font-family: "Montserrat Bold",sans-serif;
     padding: 40px 0;
     text-decoration: none;
+}
+
+.nav-header .brand {
+    font-weight: 600;
+    color: #2c2d2d;
+    font-size: 28px;
+    text-decoration: none;
+}
+
+.nav-header .brand span {
+    color: #403595;
 }
