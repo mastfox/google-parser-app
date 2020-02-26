@@ -21279,7 +21279,6 @@ button:hover {
 .testimoni blockquote::after,
 .testimoni blockquote::before {
 	position: absolute;
-	content: "\f10d";
 	font-family: FontAwesome;
 	color: #1e5ee5;
 	top: 0;
@@ -21287,7 +21286,6 @@ button:hover {
 }
 
 .testimoni blockquote::after {
-	content: "\f10e";
 	color: #4aa47b;
 	top: 75%;
 	left: auto;
@@ -21538,7 +21536,6 @@ button:hover {
 .owl-nav .owl-next:before,
 .owl-nav .owl-prev:before {
 	position: absolute;
-	content: "\f177";
 	font-family: FontAwesome;
 	font-size: 28px;
 	line-height: 28px;
@@ -21577,7 +21574,6 @@ button:hover {
 }
 
 .owl-nav .owl-next:before {
-	content: "\f178"
 }
 
 .owl-dots {

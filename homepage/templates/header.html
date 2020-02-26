@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
 <head>
     <meta charset="utf-8">
-    <title>GParser</title>
+    <title>GParser - tool to research your competitors and niche</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link href="https://fonts.googleapis.com/css?family=Alegreya|Merriweather+Sans|Pacifico&display=swap" rel="stylesheet">
@@ -11,35 +11,32 @@
 <body>
 
 <header class="header js-header-scroll">
-        <nav hidden>
-            <div class="nav-header">
-                <a href="/" class="brand"><span>G</span>Parser</a>
-                <button class="toggle-bar">
-                    <span class="fa fa-bars"></span>
-                </button>
-            </div>
-            <!-- Start Header menu for mobile -->
-            <div class="header__mobile js-header-menu">
-                <a href="#" class="header__mobile-brand">Menu</a>
-                <button class="toggle-bar header__mobile-toggle">
-                    <span class="fa fa-remove"></span>
-                </button>
-            </div>
-            <!-- End Header menu for mobile -->
-            <ul class="menu">
-                <li class="active"><a href="/">Home</a></li>
-                <li><a href="/about">About GParser</a></li>
-                <li><a href="/contact">Contact</a></li>
-                {% if user.is_authenticated %}
-                <li><span>Hello, <b>{{ user }}</b>!</span></li>
-                <li><a href="/logout">Logout</a></li>
-                {% else %}
-                <li><a href="/register">Register</a></li>
-                <li><a href="/login">Login</a></li>
-                {% endif %}
-            </ul>
-            <div>
-
-            </div>
+    <nav hidden>
+        <div class="nav-header">
+            <a href="/" class="brand"><span>G</span>Parser</a>
+            <button class="toggle-bar">
+                <span class="fa fa-bars"></span>
+            </button>
+        </div>
+        <!-- Start Header menu for mobile -->
+        <div class="header__mobile js-header-menu">
+            <a href="#" class="header__mobile-brand">Menu</a>
+            <button class="toggle-bar header__mobile-toggle">
+                <span class="fa fa-remove"></span>
+            </button>
+        </div>
+        <!-- End Header menu for mobile -->
+        <ul class="menu">
+            <li class="active"><a href="/">Home</a></li>
+            <li><a href="/about">About GParser</a></li>
+            <li><a href="/contact">Contact</a></li>
+            {% if user.is_authenticated %}
+            <li><span>Hello, <b>{{ user }}</b>!</span></li>
+            <li><a href="/logout">Logout</a></li>
+            {% else %}
+            <li><a href="/register">Sign Up</a></li>
+            <li><a href="/login">Log In</a></li>
+            {% endif %}
+        </ul>
         </nav>
-    </header>
+</header>

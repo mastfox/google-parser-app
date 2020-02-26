@@ -12,32 +12,29 @@
 <body>
 
 <header class="header js-header-scroll">
-        <nav hidden>
-            <div class="nav-header">
-                <a href="/" class="brand"><span>G</span>Parser</a>
-                <button class="toggle-bar">
-                    <span class="fa fa-bars"></span>
-                </button>
-            </div>
-            <!-- Start Header menu for mobile -->
-            <div class="header__mobile js-header-menu">
-                <a href="#" class="header__mobile-brand">Menu</a>
-                <button class="toggle-bar header__mobile-toggle">
-                    <span class="fa fa-remove"></span>
-                </button>
-            </div>
-            <!-- End Header menu for mobile -->
-            <ul class="menu">
-                {% if user.is_authenticated %}
-                <li><span>Hello, <b>{{ user }}</b>!</span></li>
-                <li><a href="/logout">Logout</a></li>
-                {% else %}
-                <li><a href="/register">Register</a></li>
-                <li><a href="/login">Login</a></li>
-                {% endif %}
-            </ul>
-            <div>
-
-            </div>
-        </nav>
-    </header>
+    <nav hidden>
+        <div class="nav-header">
+            <a href="/" class="brand"><span>G</span>Parser</a>
+            <button class="toggle-bar">
+                <span class="fa fa-bars"></span>
+            </button>
+        </div>
+        <!-- Start Header menu for mobile -->
+        <div class="header__mobile js-header-menu">
+            <a href="#" class="header__mobile-brand">Menu</a>
+            <button class="toggle-bar header__mobile-toggle">
+                <span class="fa fa-remove"></span>
+            </button>
+        </div>
+        <!-- End Header menu for mobile -->
+        <ul class="menu">
+            {% if user.is_authenticated %}
+            <li><span>Hello, <b>{{ user }}</b>!</span></li>
+            <li><a href="/logout">Logout</a></li>
+            {% else %}
+            <li><a href="/register">Register</a></li>
+            <li><a href="/login">Login</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+</header>
