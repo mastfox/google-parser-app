@@ -81,11 +81,11 @@ WSGI_APPLICATION = 'gparser.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'gparser_db',
-        'USER': 'masterv',
-        'PASSWORD': 'va261985',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
+        'NAME': '',
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': '',
+        'PORT': '',
     }
 }
 
